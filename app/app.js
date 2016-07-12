@@ -1,14 +1,21 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+angular.module('ssap', [
+        'ngRoute',
+        'ssap.home',
+        'ssap.blog'
+    ])
+    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+        $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+        $routeProvider.otherwise({
+            redirectTo: '/home',
+        });
+    }])
+
+    .controller('mainCtrl', function ($scope) {
+        $scope.cheek_nav_bar_active = function (navBarId) {
+            return navBarId === $scope.nav_bar_active
+        }
+    });

@@ -9,6 +9,6 @@ angular.module('ssap.home', ['ngRoute'])
         });
     }])
 
-    .controller('homeCtrl', [function () {
-
+    .controller('homeCtrl', ['$scope', function ($scope) {
+        $scope.lastPost = Posts.slice(-3);
     }]);

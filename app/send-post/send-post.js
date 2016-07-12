@@ -13,7 +13,7 @@ angular.module('ssap.sendPost', ['ngRoute'])
         console.log(Posts);
         $scope.addNewPost = function () {
             $scope.post.date = new Date();
-            Posts.push($scope.post);
+            Posts.push( angular.copy($scope.post));
             console.log(Posts);
         }
     }]);

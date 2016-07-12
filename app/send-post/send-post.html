@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="page-header">
+        <h1>Send Post <small>admin page</small></h1>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <form ng-submit="addNewPost()" name="sendForm">
+            <div class="form-group" ng-class="{'has-error': sendForm.title.$dirty && sendForm.title.$invalid}">
+                <label for="title">Title</label>
+                <input type="text" name="title" class="form-control" id="title" placeholder="Title" ng-model="post.title">
+            </div>
+            <div class="form-group" ng-class="{'has-error': sendForm.content.$dirty && sendForm.content.$invalid}">
+                <label for="content">Content</label>
+                <textarea name="content" class="form-control" id="content" placeholder="Content" ng-model="post.content"></textarea>
+            </div>
+            <div class="form-group" ng-class="{'has-error': sendForm.picture.$dirty && sendForm.picture.$invalid}">
+                <label for="pictureUrl">Picture URL</label>
+                <input type="url" name="picture" class="form-control" id="pictureUrl" ng-model="post.picture">
+                <p class="help-block">Upload your picture then put the url here.</p>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>

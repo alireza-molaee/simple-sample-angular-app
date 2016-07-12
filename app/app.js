@@ -1,5 +1,6 @@
 'use strict';
 
+var Posts = [];
 // Declare app level module which depends on views, and components
 angular.module('ssap', [
         'ngRoute',

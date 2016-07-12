@@ -9,6 +9,11 @@ angular.module('ssap.sendPost', ['ngRoute'])
         });
     }])
 
-    .controller('sendPostCtrl', [function () {
-
+    .controller('sendPostCtrl', ['$scope', function ($scope) {
+        console.log(Posts);
+        $scope.addNewPost = function () {
+            $scope.post.date = new Date();
+            Posts.push($scope.post);
+            console.log(Posts);
+        }
     }]);

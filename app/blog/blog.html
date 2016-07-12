@@ -1,3 +1,31 @@
-<div ng-controller="blogCtrl">
-    <h2>Blog</h2>
+<div class="row">
+    <div class="page-header">
+        <h1>Blog</h1>
+    </div>
+
+    <div>
+        <div class="post col-sm-6 col-sm-offset-3" ng-repeat="post in postsInCurrentPage() track by $index">
+            <img src="{{ post.picture }}" alt="" width="100%" height="auto">
+            <h3>{{ post.title }} <small>{{ post.date | date }}</small></h3>
+            <p class="lead">{{ post.content }}</p>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <nav>
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li ng-repeat="x in pageList" ng-class="{active: currentPage === x}"><a href="" ng-click="goToPage(x)">{{ x }}</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>

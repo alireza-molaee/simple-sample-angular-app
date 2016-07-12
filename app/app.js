@@ -4,7 +4,9 @@
 angular.module('ssap', [
         'ngRoute',
         'ssap.home',
-        'ssap.blog'
+        'ssap.blog',
+        'ssap.post',
+        'ssap.sendPost'
     ])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
